@@ -10,10 +10,10 @@ $defaultLon = "-84.0907";
 $lat = isset($_GET['lat']) ? $_GET['lat'] : $defaultLat;
 $lon = isset($_GET['lon']) ? $_GET['lon'] : $defaultLon;
 
-// URL de la API Open-Meteo (documentación en https://open-meteo.com/)
-$apiUrl = "https://api.openmeteo.com/v1/forecast?latitude={$lat}&longitude={$lon}&current_weather=true";
+// URL de la API Open-Meteo
+$apiUrl = "https://api.open-meteo.com/v1/forecast?latitude={$lat}&longitude={$lon}&current_weather=true";
 
-// Consumir la API (para algo más robusto se podría usar cURL)
+// Consumir la API
 $responseJson = @file_get_contents($apiUrl);
 $data = null;
 $error = null;
@@ -27,7 +27,6 @@ if ($responseJson === FALSE) {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -37,7 +36,7 @@ if ($responseJson === FALSE) {
         body { font-family: Arial, sans-serif; margin: 20px; }
         .card { border: 1px solid #ccc; padding: 15px; border-radius: 8px; max-width: 400px; }
         label { display: block; margin-top: 10px; }
-        input[type="text"] { width:100%; padding:5px; }
+        input[type="text"] { width: 100%; padding: 5px; }
         button { margin-top: 10px; padding: 8px 12px; }
     </style>
 </head>
@@ -62,9 +61,7 @@ if ($responseJson === FALSE) {
     <hr>
 
     <?php if ($error): ?>
-        <p style="color:red;">
-            <strong>Error:</strong> <?php echo htmlspecialchars($error); ?>
-        </p>
+        <p style="color:red;"><strong>Error:</strong> <?php echo htmlspecialchars($error); ?></p>
     <?php elseif ($data && isset($data['current_weather'])): ?>
         <?php $current = $data['current_weather']; ?>
         <h2>Resultado</h2>
