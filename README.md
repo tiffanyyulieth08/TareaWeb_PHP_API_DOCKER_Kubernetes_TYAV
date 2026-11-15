@@ -1,4 +1,11 @@
 # Aplicación PHP con API de Clima + Docker + Kubernetes
+
+<!-- local-development:start -->
+## Desarrollo local
+
+Consulta [RUNNING.md](RUNNING.md) para ubicar cada componente, abrirlo en su IDE, compilarlo y conocer las comprobaciones realizadas y los requisitos pendientes.
+<!-- local-development:end -->
+
 # Autor: Tiffany Alfaro Valverde
 - Descripción
 * Esta es una aplicación web básica desarrollada en PHP que consume la API pública de Open-Meteo para mostrar información del clima actual. 
@@ -88,4 +95,3 @@ Si Kubernetes no está funcionando:
 
 Repositorio GitHub
 # https://github.com/tiffanyyulieth08/TareaWeb_PHP_API_DOCKER_Kubernetes_TYAV.git
-
